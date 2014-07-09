@@ -73,7 +73,7 @@ public class VisualizerService {
 
   private final RefreshTask _refreshTask = new RefreshTask();
 
-  private int _refreshInterval = 20;
+  private int _refreshInterval = 5;
 
   private boolean _dynamicRefreshInterval = true;
 
@@ -223,7 +223,7 @@ public class VisualizerService {
     long t = System.currentTimeMillis();
     if (_mostRecentRefresh != -1) {
       int refreshInterval = (int) ((t - _mostRecentRefresh) / (2 * 1000));
-      _refreshInterval = Math.max(10, refreshInterval);
+      _refreshInterval = Math.max(5, refreshInterval);
       _log.info("refresh interval: " + _refreshInterval);
     }
     _mostRecentRefresh = t;
